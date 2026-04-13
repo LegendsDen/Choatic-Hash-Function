@@ -4,8 +4,10 @@
 #include <vector>
 #include "HybridParallelHash.hpp" // Include your header
 
-int main() {
-    try {
+int main()
+{
+    try
+    {
         // 1. Create an instance of the hash class.
         // You can use the default parameters:
         HybridParallelHash hasher;
@@ -19,7 +21,7 @@ int main() {
 
         // 3. Compute and print the hashes
         std::cout << "--- Hybrid Chaotic Hash ---" << std::endl;
-        
+
         std::cout << "\nMessage 1: \"" << msg1 << "\"" << std::endl;
         std::cout << "  SHA-128: " << hasher.digest(msg1, 128) << std::endl;
         std::cout << "  SHA-256: " << hasher.digest(msg1, 256) << std::endl;
@@ -27,10 +29,11 @@ int main() {
 
         std::cout << "\nMessage 2: \"" << msg2 << "\"" << std::endl;
         std::cout << "  SHA-256: " << hasher.digest(msg2, 256) << std::endl;
-        
+
         std::cout << "\nDemonstrating the avalanche effect." << std::endl;
-        
-    } catch (const std::exception& e) {
+    }
+    catch (const std::exception &e)
+    {
         std::cerr << "An error occurred: " << e.what() << std::endl;
         return 1;
     }
